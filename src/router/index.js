@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import iView from 'view-design';
 import routes from './router-config.js';
 import lsUser from '@/storage/user';
 import { hasOneOf } from '@/libs/util.js';
@@ -14,11 +13,11 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
-  iView.LoadingBar.start();
+  // iView.LoadingBar.start();
   const token = lsUser.getAccessToken();
   if (!token && to.name !== PAGE_LOGIN) {
     //如果没登录,并且当前跳转界面不是登录页面
@@ -41,7 +40,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-  iView.LoadingBar.finish();
+  // iView.LoadingBar.finish();
   window.scrollTo(0, 0);
 });
 
@@ -70,8 +69,8 @@ const turnTo = (to, access, next) => {
  * @returns
  */
 const canTurnTo = (name, roles, routes) => {
-  const permission = list => {
-    return list.some(route => {
+  const permission = (list) => {
+    return list.some((route) => {
       if (route.children && route.children.length) {
         return permission(route.children);
       } else if (route.name === name) {

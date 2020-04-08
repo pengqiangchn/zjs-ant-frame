@@ -1,15 +1,14 @@
 import axios from 'axios';
 // import store from '@/store';
 import config from '@/config/index';
-import modal from 'view-design/src/components/modal';
 // import { message } from 'view-design';
 // node_modules/view-design/src/components/message/index.js
 
-const errorhandle = error => {
+const errorhandle = (error) => {
   if (error.response) {
     const {
       status,
-      data: { result }
+      data: { result },
     } = JSON.parse(JSON.stringify(error.response));
 
     // const path = buildFullPath(config.baseURL, config.url);
@@ -21,19 +20,19 @@ const errorhandle = error => {
     if (status === 404) {
       //提示错误
       // console.log(error.response);
-      modal.error({
-        title: '<h3>请求失败</h3>',
-        content: '  未找相关资源,请检查后再操作!'
-      });
+      // modal.error({
+      //   title: '<h3>请求失败</h3>',
+      //   content: '  未找相关资源,请检查后再操作!',
+      // });
     }
     //如果是401,当前返回值是 login返回的,则不跳转401
     if (status === 401 && !(result && result.isLogin)) {
       //提示错误
       // console.log(error.response);
-      modal.error({
-        title: '<h3>请求失败</h3>',
-        content: '您没有所需权限!'
-      });
+      // modal.error({
+      //   title: '<h3>请求失败</h3>',
+      //   content: '您没有所需权限!',
+      // });
     }
   }
 
@@ -50,8 +49,8 @@ class HttpRequest {
       baseURL: this.baseUrl,
       timeout: this.timeout,
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8'
-      }
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
     };
     return config;
   }
@@ -63,7 +62,7 @@ class HttpRequest {
    * @memberof HttpRequest
    */
   interceptors(instance) {
-    instance.interceptors.request.use(config => {
+    instance.interceptors.request.use((config) => {
       // const token= Vue.ls.get()
       const token = '333';
       if (token) {
@@ -74,7 +73,7 @@ class HttpRequest {
       return config;
     }, errorhandle);
 
-    instance.interceptors.response.use(res => {
+    instance.interceptors.response.use((res) => {
       const { data, status } = res;
       return { data, status };
     }, errorhandle);

@@ -26,9 +26,9 @@ const routes = [
     meta: {
       title: '登录',
       isHide: false,
-      roles: ['admin']
+      roles: ['admin'],
     },
-    component: () => import('@/views/login/Login.vue')
+    component: () => import('@/views/login/Login.vue'),
   },
   {
     path: '/',
@@ -36,7 +36,7 @@ const routes = [
     redirect: '/home',
     component: BasicLayout,
     meta: {
-      isHide: true
+      isHide: true,
     },
     children: [
       {
@@ -44,11 +44,11 @@ const routes = [
         name: 'home',
         meta: {
           title: '首页',
-          icon: 'md-home'
+          icon: 'md-home',
         },
-        component: () => import('@v/Home')
-      }
-    ]
+        component: () => import('@v/Home'),
+      },
+    ],
   },
   {
     path: '/components',
@@ -56,38 +56,38 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '组件',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'card',
         name: 'card',
         meta: {
-          title: '卡片'
-        }
+          title: '卡片',
+        },
       },
       {
         path: 'num',
         name: 'num',
         meta: {
-          title: '数字'
-        }
+          title: '数字',
+        },
       },
       {
         path: 'selectTree',
         name: 'selectTree',
         meta: {
-          title: '选择树'
-        }
+          title: '选择树',
+        },
       },
       {
         path: 'selectTag',
         name: 'selectTag',
         meta: {
-          title: '选择标签'
-        }
-      }
-    ]
+          title: '选择标签',
+        },
+      },
+    ],
   },
   {
     path: '/dashboard',
@@ -96,24 +96,24 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '仪表盘',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'console',
         name: 'console',
         meta: {
-          title: '控制台'
-        }
+          title: '控制台',
+        },
       },
       {
         path: 'workplace',
         name: 'workplace',
         meta: {
-          title: '工作台'
-        }
-      }
-    ]
+          title: '工作台',
+        },
+      },
+    ],
   },
   {
     path: '/from',
@@ -122,31 +122,31 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '表单页',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'basic-form',
         name: 'BasicForm',
         meta: {
-          title: '基础表单'
-        }
+          title: '基础表单',
+        },
       },
       {
         path: 'step-form',
         name: 'StepForm',
         meta: {
-          title: '分步表单'
-        }
+          title: '分步表单',
+        },
       },
       {
         path: 'advanced-form',
         name: 'AdvancedForm',
         meta: {
-          title: '高级表单'
-        }
-      }
-    ]
+          title: '高级表单',
+        },
+      },
+    ],
   },
   {
     path: '/list',
@@ -155,31 +155,31 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '列表',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'basic-list',
         name: 'BasicList',
         meta: {
-          title: '标准列表'
-        }
+          title: '标准列表',
+        },
       },
       {
         path: 'card-list',
         name: 'CardList',
         meta: {
-          title: '卡片列表'
-        }
+          title: '卡片列表',
+        },
       },
       {
         path: 'goods-list',
         name: 'GoodsList',
         meta: {
-          title: '商品列表'
-        }
-      }
-    ]
+          title: '商品列表',
+        },
+      },
+    ],
   },
   {
     path: '/search',
@@ -188,31 +188,31 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '搜索页面',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'search-artcle',
         name: 'SearchArtcle',
         meta: {
-          title: '搜索列表(文章)'
-        }
+          title: '搜索列表(文章)',
+        },
       },
       {
         path: 'search-projects',
         name: 'SearchProjects',
         meta: {
-          title: '搜索列表(项目)'
-        }
+          title: '搜索列表(项目)',
+        },
       },
       {
         path: 'search-apps',
         name: 'SearchApps',
         meta: {
-          title: '搜索列表(应用)'
-        }
-      }
-    ]
+          title: '搜索列表(应用)',
+        },
+      },
+    ],
   },
   {
     path: '/table',
@@ -221,24 +221,24 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '表格页面',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'basic-table',
         name: 'BasicTable',
         meta: {
-          title: '查询表格'
-        }
+          title: '查询表格',
+        },
       },
       {
         path: 'tree-table',
         name: 'TreeTable',
         meta: {
-          title: '树形表格'
-        }
-      }
-    ]
+          title: '树形表格',
+        },
+      },
+    ],
   },
   {
     path: '/profile',
@@ -247,24 +247,24 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '详情页',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'basic-profile',
         name: 'BasicProfile',
         meta: {
-          title: '基础详情页'
-        }
+          title: '基础详情页',
+        },
       },
       {
         path: 'advanced-profile',
         name: 'AdvancedProfile',
         meta: {
-          title: '高级详情页'
-        }
-      }
-    ]
+          title: '高级详情页',
+        },
+      },
+    ],
   },
   {
     path: '/result',
@@ -273,24 +273,24 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '结果页面',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
         path: 'success',
         name: 'Success',
         meta: {
-          title: '成功页'
-        }
+          title: '成功页',
+        },
       },
       {
         path: 'fail',
         name: 'Fail',
         meta: {
-          title: '失败页'
-        }
-      }
-    ]
+          title: '失败页',
+        },
+      },
+    ],
   },
   {
     path: '*',
@@ -299,7 +299,7 @@ const routes = [
     component: BasicLayout,
     meta: {
       title: '异常页面',
-      icon: 'md-home'
+      icon: 'md-home',
     },
     children: [
       {
@@ -307,18 +307,18 @@ const routes = [
         name: 'error_401',
         meta: {
           title: '无权限访问',
-          isHide: false
+          isHide: false,
         },
-        component: () => import('@/views/error-page/401.vue')
+        component: () => import('@/views/error-page/401.vue'),
       },
       {
         path: '500',
         name: 'error_500',
         meta: {
           title: '服务器相应失败',
-          isHide: false
+          isHide: false,
         },
-        component: () => import('@/views/error-page/500.vue')
+        component: () => import('@/views/error-page/500.vue'),
       },
       {
         //上面的都没匹配 就到404
@@ -326,21 +326,21 @@ const routes = [
         name: 'error_404',
         meta: {
           title: '未找到资源',
-          isHide: false
+          isHide: false,
         },
-        component: () => import('@/views/error-page/404.vue')
-      }
-    ]
+        component: () => import('@/views/error-page/404.vue'),
+      },
+    ],
   },
   {
     path: '/error_404',
     name: 'global_404',
     meta: {
       title: '未找到资源',
-      isHide: false
+      isHide: false,
     },
-    component: () => import('@/views/error-page/404.vue')
-  }
+    component: () => import('@/views/error-page/404.vue'),
+  },
 ];
 
 export default routes;

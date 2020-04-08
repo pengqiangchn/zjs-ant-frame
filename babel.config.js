@@ -27,7 +27,6 @@ module.exports = {
         removeDebugger: true,
       },
     ],
-    { useBuiltIns: 'usage' },
   ],
   plugins,
 };
